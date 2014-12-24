@@ -1,0 +1,10 @@
+<md-card class="signup_card" layout="column">
+    <span style="font-size: 22px;color: #A09D9D;">Welcome to Chat</span>
+    <span style="font-size: 18px;margin-top: 5px;color: #A09D9D;">Signup</span>
+    <md-text-float label="FirstName" ng-model="user.firstName" class="textbox"></md-text-float>
+    <md-text-float label="LastName" ng-model="user.lastName" class="textbox"></md-text-float>
+    <md-text-float label="Email" ng-model="user.email" class="textbox"></md-text-float>
+    <md-text-float label="Password" ng-model="user.pass" class="textbox" type="password"></md-text-float>
+
+    <md-button class="md-raised md-primary signup_btn" ng-click="signup()">SIGN UP</md-button>
+</md-card>

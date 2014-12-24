@@ -1,0 +1,31 @@
+html,body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #00b0ff;
+}
+.textbox,label,input{
+    width:100%;
+}
+
+.textbox > label {
+    font-size: 14px;
+}
+.signup_card{
+    height: 400px;
+    width: 300px;
+    background-color: #fff;
+    padding:20px;
+}
+.signup_btn{
+    margin-top: 40px;
+    font-size: 14px;
+    padding: 10px;
+}
+.signup_card>span{
+    text-align: center;
+}
