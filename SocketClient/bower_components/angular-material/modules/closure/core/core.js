@@ -119,10 +119,10 @@ MdConstantFactory.$inject = ["$$rAF", "$sniffer"];
 (function() {
 'use strict';
 
-/* 
+/*
  * This var has to be outside the angular factory, otherwise when
  * there are multiple material apps on the same page, each app
- * will create its own instance of this array and the app's IDs 
+ * will create its own instance of this array and the app's IDs
  * will not be unique.
  */
 var nextUniqueId = ['0','0','0'];
@@ -409,7 +409,7 @@ angular.module('material.core')
     }
 
     /*
-     * Find the next item. If reloop is true and at the end of the list, it will 
+     * Find the next item. If reloop is true and at the end of the list, it will
      * go back to the first item. If given ,the `validate` callback will be used
      * determine whether the next item is valid. If not valid, it will try to find the
      * next item again.
@@ -431,7 +431,7 @@ angular.module('material.core')
     }
 
     /*
-     * Find the previous item. If reloop is true and at the beginning of the list, it will 
+     * Find the previous item. If reloop is true and at the beginning of the list, it will
      * go back to the last item. If given ,the `validate` callback will be used
      * determine whether the previous item is valid. If not valid, it will try to find the
      * previous item again.
@@ -496,7 +496,7 @@ angular.module('material.core')
   }
 }]);
 
-/* 
+/*
  * Since removing jQuery from the demos, some code that uses `element.focus()` is broken.
  *
  * We need to add `element.focus()`, because it's testable unlike `element[0].focus`.
@@ -649,11 +649,11 @@ function mdCompilerService($q, $http, $injector, $compile, $controller, $templat
     *      * `key` - `{string}`: a name of a dependency to be injected into the controller.
     *      * `factory` - `{string|function}`: If `string` then it is an alias for a service.
     *        Otherwise if function, then it is injected and the return value is treated as the
-    *        dependency. If the result is a promise, it is resolved before its value is 
+    *        dependency. If the result is a promise, it is resolved before its value is
     *        injected into the controller.
     *
     * @returns {object=} promise A promise, which will be resolved with a `compileData` object.
-    * `compileData` has the following properties: 
+    * `compileData` has the following properties:
     *
     *   - `element` - `{element}`: an uncompiled element matching the provided template.
     *   - `link` - `{function(scope)}`: A link function, which, when called, will compile
@@ -672,7 +672,7 @@ function mdCompilerService($q, $http, $injector, $compile, $controller, $templat
     var transformTemplate = options.transformTemplate || angular.identity;
     var bindToController = options.bindToController;
 
-    // Take resolve values and invoke them.  
+    // Take resolve values and invoke them.
     // Resolves can either be a string (value: 'MyRegisteredAngularConst'),
     // or an invokable 'factory' of sorts: (value: function ValueGetter($dependency) {})
     angular.forEach(resolve, function(value, key) {
@@ -1453,7 +1453,7 @@ InkRippleService.$inject = ["$window", "$timeout"];
 
 /**
  * noink/nobar/nostretch directive: make any element that has one of
- * these attributes be given a controller, so that other directives can 
+ * these attributes be given a controller, so that other directives can
  * `require:` these and see if there is a `no<xxx>` parent attribute.
  *
  * @usage

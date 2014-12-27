@@ -314,7 +314,7 @@ function TabItemController($scope, $element, $attrs, $compile, $animate, $mdUtil
   function isDisabled() {
     return disabledParsed($scope.$parent);
   }
-  
+
   /**
    * Add the tab's content to the DOM container area in the tabs,
    * @param contentArea the contentArea to add the content of the tab to
@@ -627,7 +627,7 @@ function MdTabsController($scope, $element, $mdUtil) {
   self.indexOf = tabsList.indexOf;
   self.itemAt = tabsList.itemAt;
   self.count = tabsList.count;
-  
+
   self.selected = selected;
   self.add = add;
   self.remove = remove;
@@ -660,7 +660,7 @@ function MdTabsController($scope, $element, $mdUtil) {
 
     // Select the new tab if we don't have a selectedIndex, or if the
     // selectedIndex we've been waiting for is this tab
-    if ($scope.selectedIndex === -1 || !angular.isNumber($scope.selectedIndex) || 
+    if ($scope.selectedIndex === -1 || !angular.isNumber($scope.selectedIndex) ||
         $scope.selectedIndex === self.indexOf(tab)) {
       self.select(tab);
     }

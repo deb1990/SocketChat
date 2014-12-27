@@ -118,10 +118,10 @@ MdConstantFactory.$inject = ["$$rAF", "$sniffer"];
 (function() {
 'use strict';
 
-/* 
+/*
  * This var has to be outside the angular factory, otherwise when
  * there are multiple material apps on the same page, each app
- * will create its own instance of this array and the app's IDs 
+ * will create its own instance of this array and the app's IDs
  * will not be unique.
  */
 var nextUniqueId = ['0','0','0'];
@@ -408,7 +408,7 @@ angular.module('material.core')
     }
 
     /*
-     * Find the next item. If reloop is true and at the end of the list, it will 
+     * Find the next item. If reloop is true and at the end of the list, it will
      * go back to the first item. If given ,the `validate` callback will be used
      * determine whether the next item is valid. If not valid, it will try to find the
      * next item again.
@@ -430,7 +430,7 @@ angular.module('material.core')
     }
 
     /*
-     * Find the previous item. If reloop is true and at the beginning of the list, it will 
+     * Find the previous item. If reloop is true and at the beginning of the list, it will
      * go back to the last item. If given ,the `validate` callback will be used
      * determine whether the previous item is valid. If not valid, it will try to find the
      * previous item again.
@@ -495,7 +495,7 @@ angular.module('material.core')
   }
 }]);
 
-/* 
+/*
  * Since removing jQuery from the demos, some code that uses `element.focus()` is broken.
  *
  * We need to add `element.focus()`, because it's testable unlike `element[0].focus`.
@@ -648,11 +648,11 @@ function mdCompilerService($q, $http, $injector, $compile, $controller, $templat
     *      * `key` - `{string}`: a name of a dependency to be injected into the controller.
     *      * `factory` - `{string|function}`: If `string` then it is an alias for a service.
     *        Otherwise if function, then it is injected and the return value is treated as the
-    *        dependency. If the result is a promise, it is resolved before its value is 
+    *        dependency. If the result is a promise, it is resolved before its value is
     *        injected into the controller.
     *
     * @returns {object=} promise A promise, which will be resolved with a `compileData` object.
-    * `compileData` has the following properties: 
+    * `compileData` has the following properties:
     *
     *   - `element` - `{element}`: an uncompiled element matching the provided template.
     *   - `link` - `{function(scope)}`: A link function, which, when called, will compile
@@ -671,7 +671,7 @@ function mdCompilerService($q, $http, $injector, $compile, $controller, $templat
     var transformTemplate = options.transformTemplate || angular.identity;
     var bindToController = options.bindToController;
 
-    // Take resolve values and invoke them.  
+    // Take resolve values and invoke them.
     // Resolves can either be a string (value: 'MyRegisteredAngularConst'),
     // or an invokable 'factory' of sorts: (value: function ValueGetter($dependency) {})
     angular.forEach(resolve, function(value, key) {
@@ -1452,7 +1452,7 @@ InkRippleService.$inject = ["$window", "$timeout"];
 
 /**
  * noink/nobar/nostretch directive: make any element that has one of
- * these attributes be given a controller, so that other directives can 
+ * these attributes be given a controller, so that other directives can
  * `require:` these and see if there is a `no<xxx>` parent attribute.
  *
  * @usage
@@ -1995,7 +1995,7 @@ function MdButtonDirective($mdInkRipple, $mdTheming, $mdAria) {
   function isAnchor(attr) {
     return angular.isDefined(attr.href) || angular.isDefined(attr.ngHref);
   }
-  
+
   function getTemplate(element, attr) {
     if (isAnchor(attr)) {
       return '<a class="md-button" ng-transclude></a>';
@@ -2014,7 +2014,7 @@ function MdButtonDirective($mdInkRipple, $mdTheming, $mdAria) {
       $mdAria.expect(element, 'aria-label');
     }
 
-    // For anchor elements, we have to set tabindex manually when the 
+    // For anchor elements, we have to set tabindex manually when the
     // element is disabled
     if (isAnchor(attr)) {
       scope.$watch(attr.ngDisabled, function(isDisabled) {
@@ -2137,7 +2137,7 @@ function MdCheckboxDirective(inputDirective, $mdInkRipple, $mdAria, $mdConstant,
     restrict: 'E',
     transclude: true,
     require: '?ngModel',
-    template: 
+    template:
       '<div class="md-container" md-ink-ripple md-ink-ripple-checkbox>' +
         '<div class="md-icon"></div>' +
       '</div>' +
@@ -2700,7 +2700,7 @@ function MdDialogProvider($$interimElementProvider) {
 
       return dialogTransitionEnd(dialogEl);
     }
-    
+
     function dialogPopOut(container, parentElement, clickElement) {
       var dialogEl = container.find('md-dialog');
 
@@ -3099,7 +3099,7 @@ function MdProgressLinearDirective($$rAF, $mdConstant, $mdTheming) {
       '</div>',
     compile: compile
   };
-  
+
   function compile(tElement, tAttrs, transclude) {
     tElement.attr('aria-valuemin', 0);
     tElement.attr('aria-valuemax', 100);
@@ -4306,7 +4306,7 @@ function MdSticky($document, $mdConstant, $compile, $$rAF, $mdUtil) {
         return a.top < b.top ? -1 : 1;
       });
 
-      // Find which item in the list should be active, 
+      // Find which item in the list should be active,
       // based upon the content's current scroll position
       var item;
       var currentScrollTop = contentEl.prop('scrollTop');
@@ -4327,7 +4327,7 @@ function MdSticky($document, $mdConstant, $compile, $$rAF, $mdUtil) {
     // Find the `top` of an item relative to the content element,
     // and also the height.
     function refreshPosition(item) {
-      // Find the top of an item by adding to the offsetHeight until we reach the 
+      // Find the top of an item by adding to the offsetHeight until we reach the
       // content element.
       var current = item.element[0];
       item.top = 0;
@@ -4365,7 +4365,7 @@ function MdSticky($document, $mdConstant, $compile, $$rAF, $mdUtil) {
             translate(self.current, null);
           }
         }
-        
+
       // Scrolling up with a current sticky item?
       } else if (!isScrollingDown && self.current) {
         if (scrollTop < self.current.top) {
@@ -4385,7 +4385,7 @@ function MdSticky($document, $mdConstant, $compile, $$rAF, $mdUtil) {
         }
       }
     }
-     
+
    function setCurrentItem(item) {
      if (self.current === item) return;
      // Deactivate currently active item
@@ -4429,7 +4429,7 @@ function MdSticky($document, $mdConstant, $compile, $$rAF, $mdUtil) {
      } else {
        item.translateY = amount;
        item.clone.css(
-         $mdConstant.CSS.TRANSFORM, 
+         $mdConstant.CSS.TRANSFORM,
          'translate3d(' + item.left + 'px,' + amount + 'px,0)'
        );
      }
@@ -4456,7 +4456,7 @@ function MdSticky($document, $mdConstant, $compile, $$rAF, $mdUtil) {
 
   // Android 4.4 don't accurately give scroll events.
   // To fix this problem, we setup a fake scroll event. We say:
-  // > If a scroll or touchmove event has happened in the last DELAY milliseconds, 
+  // > If a scroll or touchmove event has happened in the last DELAY milliseconds,
   //   then send a `$scroll` event every animationFrame.
   // Additionally, we add $scrollstart and $scrollend events.
   function setupAugmentedScrollEvents(element) {
@@ -4536,7 +4536,7 @@ function MdSubheaderDirective($mdSticky, $compile, $mdTheming) {
     restrict: 'E',
     replace: true,
     transclude: true,
-    template: 
+    template:
       '<h2 class="md-subheader">' +
         '<span class="md-subheader-content"></span>' +
       '</h2>',
@@ -4976,7 +4976,7 @@ mdTextFloatDirective.$inject = ["$mdTheming", "$mdUtil", "$parse"];
  * @description
  * Use the `<md-input-group>` directive as the grouping parent of a `<md-input>` element.
  *
- * @usage 
+ * @usage
  * <hljs lang="html">
  * <md-input-group ng-disabled="isDisabled">
  *   <label for="{{fid}}">{{someLabel}}</label>
@@ -5261,7 +5261,7 @@ function MdToastDirective() {
  * @module material.components.toast
  *
  * @description
- * `$mdToast` is a service to butild a toast nofication on any position 
+ * `$mdToast` is a service to butild a toast nofication on any position
  * on the screen with an optional duration, and provides a simple promise API.
  *
  *
@@ -5320,7 +5320,7 @@ function MdToastDirective() {
  *
  * @description Shows the toast.
  *
- * @param {object} optionsOrPreset Either provide an `$mdToastPreset` returned from `simple()` 
+ * @param {object} optionsOrPreset Either provide an `$mdToastPreset` returned from `simple()`
  * and `build()`, or an options object with the following properties:
  *
  *   - `templateUrl` - `{string=}`: The url of an html template file that will
@@ -5923,7 +5923,7 @@ function TabItemController($scope, $element, $attrs, $compile, $animate, $mdUtil
   function isDisabled() {
     return disabledParsed($scope.$parent);
   }
-  
+
   /**
    * Add the tab's content to the DOM container area in the tabs,
    * @param contentArea the contentArea to add the content of the tab to
@@ -6236,7 +6236,7 @@ function MdTabsController($scope, $element, $mdUtil) {
   self.indexOf = tabsList.indexOf;
   self.itemAt = tabsList.itemAt;
   self.count = tabsList.count;
-  
+
   self.selected = selected;
   self.add = add;
   self.remove = remove;
@@ -6269,7 +6269,7 @@ function MdTabsController($scope, $element, $mdUtil) {
 
     // Select the new tab if we don't have a selectedIndex, or if the
     // selectedIndex we've been waiting for is this tab
-    if ($scope.selectedIndex === -1 || !angular.isNumber($scope.selectedIndex) || 
+    if ($scope.selectedIndex === -1 || !angular.isNumber($scope.selectedIndex) ||
         $scope.selectedIndex === self.indexOf(tab)) {
       self.select(tab);
     }

@@ -1,31 +1,81 @@
-html,body{
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+	font-family: 'Lato', sans-serif !important;
 }
-body{
-    background-color: #00b0ff;
+html,
+body,
+.fullHeightWidth {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
-.textbox,label,input{
-    width:100%;
-}
+body {
+	background-color: #815CB6;
 
+}
+.textbox,
+label,
+input {
+	width: 100%;
+}
 .textbox > label {
-    font-size: 14px;
+	font-size: 14px;
 }
-.signup_card{
-    height: 400px;
-    width: 300px;
-    background-color: #fff;
-    padding:20px;
+.signup_card {
+	height: 285px;
+	width: 300px;
+	background-color: #fff;
+	padding: 20px;
 }
-.signup_btn{
-    margin-top: 40px;
-    font-size: 14px;
-    padding: 10px;
+.login_card {
+	height: 300px;
+	width: 300px;
+	background-color: #fff;
+	padding: 20px;
 }
-.signup_card>span{
-    text-align: center;
+.signup_btn {
+	margin-top: auto;
+	margin-bottom: -6px;
+	font-size: 14px;
+	padding: 10px;
+}
+.login_btn {
+	margin-top: auto;
+	margin-bottom: -41px;
+	font-size: 14px;
+	padding: 10px;
+}
+.signup_card>span {
+	text-align: center;
+}
+.base-color {
+	background-color: #815CB6;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+.face {
+	border-radius: 30px;
+	border: 1px solid #ddd;
+	width: 48px;
+	margin: 10px;
+}
+.list {
+	border-bottom: 1px solid rgba(207, 207, 207, 0.16);
+}
+.whitebg {
+	background-color: #fff;
+}
+md-toolbar,
+.md-toolbar-tools {
+	height: 55px;
+	min-height: 55px;
+	max-height: 55px;
+}
+.md-tile-content {
+	padding: 8px 16px;
+}
+.md-tile-left {
+	min-width: 50px;
+	height:66px;
+	margin-right: -16px;
 }

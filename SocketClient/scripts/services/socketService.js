@@ -1,7 +1,7 @@
 var socketService = angular.module('socketService',[]);
 
 socketService.service('socketService', ['$log','$rootScope', function($log,$rootScope) {
-    var socket = io.connect('http://192.168.1.4:3702');
+    var socket = io.connect('http://localhost:3702');
     socket.on('connect', function () {
         console.log("socket connected");
     });
@@ -16,5 +16,5 @@ socketService.service('socketService', ['$log','$rootScope', function($log,$root
     };
     return {
         signUp: _signUp
-    }
+    };
 }]);

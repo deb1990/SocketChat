@@ -12,7 +12,9 @@
     "dependencies": {
         "express": "latest",
         "socket.io": "latest",
-        "mongoose": "latest"
+        "mongoose": "latest",
+        "twilio": "latest",
+        "cron": "latest"
     },
     "author": "debarshi",
     "license": "BSD-2-Clause"

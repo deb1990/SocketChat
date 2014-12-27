@@ -1,36 +1,27 @@
 var app = angular.module("socketChat",[
     'ngRoute',
+    'ngTouch',
     'ngMaterial',
-    'socketService'
+    'beforeLoginModule',
+    'socketService',
+    'deviceService'
 ]);
 
 app.config(function($routeProvider){
     $routeProvider.when('/',{
+        templateUrl: 'partials/welcomeScreen.html',
+        controller: 'welcomeController'
+    });
+	$routeProvider.when('/signUp',{
         templateUrl: 'partials/signupScreen.html',
         controller: 'signupController'
     });
+	$routeProvider.when('/messages',{
+        templateUrl: 'partials/messagesScreen.html',
+        controller: 'messagesController'
+    });
     $routeProvider.otherwise({
         redirectTo: '/'
-    })
+    });
 });
-app.controller('signupController',[
-    '$scope',
-    'socketService',
-    function($scope,socketService){
-        $scope.user={
-            firstName:'',
-            lastName:'',
-            pass:'',
-            email:''
-        };
-        $scope.$on('userExist',function(){
-            alert('dupli');
-        });
-        $scope.$on('signInSuccess',function(){
-            alert('entry');
-        });
-        $scope.signup=function(){
-            socketService.signUp($scope.user);
-        };
-    }
-]);
+

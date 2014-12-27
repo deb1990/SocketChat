@@ -1,0 +1,33 @@
+<div class="fullHeightWidth whitebg" ng-swipe-left="openFriends()">
+	<md-toolbar md-scroll-shrink>
+		<div class="md-toolbar-tools base-color">
+			<span>Howdy!</span>
+		</div>
+	</md-toolbar>
+	<md-list>
+		<md-item ng-repeat="message in messages">
+			<md-item-content class="list">
+				<div class="md-tile-left">
+					<img ng-src="{{message.profilePic}}" class="face" alt="{{message.user}}">
+				</div>
+				<div class="md-tile-content">
+					<h3>{{message.user}}</h3>
+					<p>{{message.lastMessage}}</p>
+				</div>
+			</md-item-content>
+		</md-item>
+	</md-list>
+
+	<section layout="row" flex>
+		<md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right" ng-swipe-right="closeFriends()">
+			<md-toolbar class="md-theme-light">
+				<h1 class="md-toolbar-tools base-color">Friends</h1>
+			</md-toolbar>
+			<md-content class="md-padding">
+
+			</md-content>
+		</md-sidenav>
+	</section>
+</div>
+
+

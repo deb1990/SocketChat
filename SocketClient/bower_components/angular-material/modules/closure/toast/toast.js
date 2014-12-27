@@ -37,7 +37,7 @@ function MdToastDirective() {
  * @module material.components.toast
  *
  * @description
- * `$mdToast` is a service to butild a toast nofication on any position 
+ * `$mdToast` is a service to butild a toast nofication on any position
  * on the screen with an optional duration, and provides a simple promise API.
  *
  *
@@ -96,7 +96,7 @@ function MdToastDirective() {
  *
  * @description Shows the toast.
  *
- * @param {object} optionsOrPreset Either provide an `$mdToastPreset` returned from `simple()` 
+ * @param {object} optionsOrPreset Either provide an `$mdToastPreset` returned from `simple()`
  * and `build()`, or an options object with the following properties:
  *
  *   - `templateUrl` - `{string=}`: The url of an html template file that will

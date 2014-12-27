@@ -65,7 +65,7 @@ function MdButtonDirective($mdInkRipple, $mdTheming, $mdAria) {
   function isAnchor(attr) {
     return angular.isDefined(attr.href) || angular.isDefined(attr.ngHref);
   }
-  
+
   function getTemplate(element, attr) {
     if (isAnchor(attr)) {
       return '<a class="md-button" ng-transclude></a>';
@@ -84,7 +84,7 @@ function MdButtonDirective($mdInkRipple, $mdTheming, $mdAria) {
       $mdAria.expect(element, 'aria-label');
     }
 
-    // For anchor elements, we have to set tabindex manually when the 
+    // For anchor elements, we have to set tabindex manually when the
     // element is disabled
     if (isAnchor(attr)) {
       scope.$watch(attr.ngDisabled, function(isDisabled) {
